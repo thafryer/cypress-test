@@ -20,6 +20,8 @@ jobs:
       # ...
       # Your existing setup to run Cypress tests
       # ...
+      - name: Run Cypress
+        run: npm run cypress:chromatic
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest
