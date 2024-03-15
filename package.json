@@ -8,7 +8,6 @@
     "e2e:headless": "start-server-and-test dev http://localhost:3000 \"ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 cypress run --e2e\"",
     "component": "cypress open --component",
     "component:headless": "cypress run --component",
-    "cypress:chromatic": "ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx cypress run --e2e",
     "chromatic": "npx chromatic@latest -t=chpt_81874522b6263b3",
     "chromatic:staging": "npx chromatic@latest --cypress -t=chpt_b3f137c73f8f7a4"
   },
