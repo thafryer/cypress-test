@@ -1,13 +1,10 @@
 import { defineConfig } from "cypress";
+const { installPlugin } = require("@chromatic-com/cypress");
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {},
-  },
-  component: {
-    devServer: {
-      framework: "next",
-      bundler: "webpack",
+    setupNodeEvents(on, config) {
+      installPlugin(on, config);
     },
   },
 });

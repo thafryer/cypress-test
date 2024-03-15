@@ -5,9 +5,12 @@
     "build": "next build",
     "start": "next start",
     "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
-    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 cypress run --e2e\"",
     "component": "cypress open --component",
-    "component:headless": "cypress run --component"
+    "component:headless": "cypress run --component",
+    "cypress:chromatic": "ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx cypress run --e2e",
+    "chromatic": "npx chromatic@latest -t=chpt_81874522b6263b3",
+    "chromatic:staging": "npx chromatic@latest --cypress -t=chpt_b3f137c73f8f7a4"
   },
   "dependencies": {
     "next": "latest",
@@ -15,10 +18,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@chromatic-com/cypress": "^0.6.4",
     "@types/node": "18.0.6",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.0.6",
-    "cypress": "12.3.0",
+    "chromatic": "^11.0.8",
+    "cypress": "^13.7.0",
     "start-server-and-test": "1.15.2",
     "typescript": "4.7.4"
   }
