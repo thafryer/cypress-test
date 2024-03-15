@@ -22,6 +22,9 @@ jobs:
       # ...
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        with:
+          start: npm run dev
+          wait-on: "http://localhost:3000/"
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest
